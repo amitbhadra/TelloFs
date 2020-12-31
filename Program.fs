@@ -34,8 +34,7 @@ let main argv =
     let sendingClient = new UdpClient()
     let sendingIpEndPoint = new IPEndPoint(sendAddress, sendPort)
     
-    let rec loop() =
-        let receive () = async {
+    let receive () = async {
             try
                 let! receiveResult = receivingClient.ReceiveAsync() |> Async.AwaitTask
                 let receiveBytes = receiveResult.Buffer
@@ -44,30 +43,25 @@ let main argv =
             with
                 | error -> printfn "%s" error.Message }
         
-        let send () = async {
-            printfn "Send message: "
-            let (sendBytes: byte array) = Encoding.ASCII.GetBytes(Console.ReadLine())
-            try
-                sendingClient.Send(sendBytes, sendBytes.Length, sendingIpEndPoint) |> ignore
-            with
-                | error -> printfn "%s" error.Message }
-        
-        receive |> ignore
-    
+    let send () = async {
         printfn "Send message: "
         let (sendBytes: byte array) = Encoding.ASCII.GetBytes(Console.ReadLine())
-    
         try
             sendingClient.Send(sendBytes, sendBytes.Length, sendingIpEndPoint) |> ignore
         with
-            | error -> printfn "%s" error.Message
+            | error -> printfn "%s" error.Message }
 
-        Thread.Sleep(2000);
+    let rec loop1() = async {
+        do! receive ()
+        return! loop1() }
 
+    let rec loop2() = async {
+        do! send ()
+        return! loop2() }
+
+    loop1() |> Async.Start  
+    loop2() |> Async.Start
         
-        loop()
-
-    loop()   
     Console.Read() |> ignore
     
 
