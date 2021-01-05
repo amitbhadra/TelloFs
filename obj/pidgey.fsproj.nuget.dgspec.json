@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/amitbhadra/Projects/pidgey/pidgey/pidgey.fsproj": {}
+    "/Users/meanmachin3/github/TelloFs/pidgey.fsproj": {}
   },
   "projects": {
-    "/Users/amitbhadra/Projects/pidgey/pidgey/pidgey.fsproj": {
+    "/Users/meanmachin3/github/TelloFs/pidgey.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/amitbhadra/Projects/pidgey/pidgey/pidgey.fsproj",
+        "projectUniqueName": "/Users/meanmachin3/github/TelloFs/pidgey.fsproj",
         "projectName": "pidgey",
-        "projectPath": "/Users/amitbhadra/Projects/pidgey/pidgey/pidgey.fsproj",
-        "packagesPath": "/Users/amitbhadra/.nuget/packages/",
-        "outputPath": "/Users/amitbhadra/Projects/pidgey/pidgey/obj/",
+        "projectPath": "/Users/meanmachin3/github/TelloFs/pidgey.fsproj",
+        "packagesPath": "/Users/meanmachin3/.nuget/packages/",
+        "outputPath": "/Users/meanmachin3/github/TelloFs/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/amitbhadra/.nuget/NuGet/NuGet.Config"
+          "/Users/meanmachin3/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -69,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
